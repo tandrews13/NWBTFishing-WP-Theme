@@ -180,6 +180,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 //Gets all of the weekly points from each post, sorts and returns sum of top ten
+
 function totalPoints() {
     
     $weeklyPoints = array();
@@ -200,6 +201,7 @@ function totalPoints() {
 }
 
 //Uses the_loop.  Calls TotalPoints function for each team to insert total points into the rankArray and then sorts rankArray to determine ranking.
+
 function teamRank($teamName,$year,$night) {
 
     $rank_loop = new WP_Query(array( 'category__and' => array( $year, $night ) ) );
@@ -227,6 +229,8 @@ function teamRank($teamName,$year,$night) {
   }
 
 }
+
+// Loops through all posts of the specified categories and arranges teams by rank order.
 
 function seasonLeaders($year,$night) {
   $rank_loop = new WP_Query(array( 'category__and' => array( $year, $night ) ) );

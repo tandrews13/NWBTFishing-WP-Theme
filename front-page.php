@@ -16,8 +16,16 @@ error_reporting(E_ALL);
     <h4>Tuesday Night Walleye League</h4>
     <section class="teamcontainer">
     <?php
+
     $leaderboardposition = 1;
+
+    /** 
+     * Calls the seasonLeaders function in functions.php which loops through all posts for the specific categories and returns
+     * them in an array.  $leaderboardposition starts at 1 to set the Rank for the first team in the array (should be top points team)
+     * and then increments by 1 after the while loop for each post found.
+     */
     foreach(seasonLeaders(5,4) as $teamkey=>$pointvalue) {
+        //this loop just searches for a single post by the current ID pulled from the seasonLeaders array
         $team_loop = new WP_Query(array( 'p' => $teamkey ) );
         
         while ( $team_loop->have_posts() ) : $team_loop->the_post(); 
@@ -51,6 +59,7 @@ error_reporting(E_ALL);
                     <div class="weeklystats">
                         
                             <?php 
+                            //Each Team Post has 15 pairs of Advanced Custom Fields for weight and score.
                             for ($i = 1; $i <= 15; $i++) { ?>
                                 <div class="statrow">  
                                     <div class="week">Week <?php echo $i ?>:</div>
