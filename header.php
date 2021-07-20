@@ -40,22 +40,26 @@
         <a href="/tuesday-walleye"><p>Tuesday</p></a>
       </div>
       <div class="menuitem">
-      <a href="wednesday-bass"><p>Wednesday</p></a>
+      <a href="/wednesday-bass"><p>Wednesday</p></a>
       </div>
       <div class="menuitem">
       <a href="/thursday-walleye"><p>Thursday</p></a>
       </div>
       <div class="menuitem">
-        <p>Champs</p>
+      <a href="/photo-board"><p>Photos</p></a>
       </div>
+      <?php 
+      if (current_user_can('delete_users')) : ?>
+      <div class="menuitem">
+        <a href="/mass-edit"><p>Mass Edit</p></a>
+      </div>
+      <?php endif; ?>
       <!-- Wait until rules are complete
       <div class="menuitem">
         <a href="/league-rules"><p>Rules</p></a>
       </div> 
       -->
-      <div class="menuitem">
-      <a href="/photo-board"><p>Photos</p></a>
-      </div>
+
     
 
     </nav>

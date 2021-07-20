@@ -14,7 +14,26 @@ error_reporting(E_ALL);
 <main>
 
     <h4>Thursday Night Walleye League</h4>
+    <section class="weekly-lake">
+    <div class="weekly-lake-header">WEEKLY LAKE</div>
+        <?php
+            $lake_loop = new WP_Query( array('cat' => 7));
+                while( $lake_loop ->have_posts() ) : $lake_loop->the_post();
+                 ?>
+                    <div class="lakedisplay">  
+                    <?php for ($i = 1; $i <= 15; $i++) { ?>
+                        <?php if (get_field('week_' . $i)) { ?>
+                            <div class="lake-week"><div class="lakenumber-left"></div><div class="lake-week-number"><?php echo $i ?></div> <div class="lake-name"><?php echo '<a href="/week-results?week='.$i . '&cat1=3&cat2=5&lakepost=635">'?><?php echo the_field('week_' . $i) ?></a></div></div>
+                        <?php } ?>
+                    <?php } ?>
+                    </div>
+                <?php
+                endwhile;
+        ?>
+    </section>
+
     <section class="teamcontainer">
+    <div class="weekly-lake-header">TEAM STANDINGS</div>
     <?php
     $leaderboardposition = 1;
 
@@ -29,6 +48,7 @@ error_reporting(E_ALL);
         $team_loop = new WP_Query(array( 'p' => $teamkey ) );
         
         while ( $team_loop->have_posts() ) : $team_loop->the_post(); 
+
         
         $teamImage = get_field('team_image');
     ?>
@@ -46,7 +66,10 @@ error_reporting(E_ALL);
                             </h3>
                         </div>
                         <p>RANK</p>
-                    </div>   
+                    </div> 
+                    <div class='teamname'>
+                        <p><?php echo the_field('team_name'); ?></p>
+                    </div>  
                     <div class="topTen">
                         <p>Best 10:</p>                
                     </div>

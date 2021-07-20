@@ -20,7 +20,6 @@ body {
   padding: 0px;
   background-color: rgba(0, 0, 0, 0.65);
 }
-
 main {
   display: flex;
   flex-direction: column;
@@ -85,7 +84,6 @@ main h5 {
   margin: 0px;
   padding: 0px;
 }
-
 .leaguenav {
   position: absolute;
   display: flex;
@@ -118,6 +116,69 @@ main h5 {
   color: white;
 }
 
+.lakedisplay {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lake-week {
+  color: #8eb09b;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: -30px;
+}
+
+.weekly-lake-header {
+  color: #8eb09b;
+  width: 100%;
+  font-family: "Passion One", cursive;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.lakenumber-left {
+  background-color: red;
+  width: 25px;
+  height: 30px;
+  right: -15px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.lake-week-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Passion One", cursive;
+  height: 30px;
+  width: 30px;
+  background-color: #8eb09b;
+  color: black;
+  border-radius: 50%;
+  border: solid 3px black;
+  z-index: 2;
+}
+
+.lake-name {
+  background-color: rgb(39, 41, 39);
+  color: white;
+  width: 70px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px 10px 5px 20px;
+  left: -15px;
+  position: relative;
+  z-index: 1;
+}
+
+.lake-name a {
+  color: white;
+}
+
 .teamcontainer {
   display: flex;
   flex-wrap: wrap;
@@ -132,7 +193,6 @@ main h5 {
   margin-top: 20px;
   width: 20%;
 }
-
 .teamheader {
   display: grid;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
@@ -208,6 +268,18 @@ main h5 {
 .topTen p {
   text-align: right;
   width: 100%;
+}
+
+.teamname {
+  grid-column-start: 1;
+  grid-column-end: 9;
+  grid-row-start: 6;
+  grid-row-end: 8;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #8eb09b;
+  margin: 0px;
 }
 
 .topTen-points {
@@ -289,12 +361,10 @@ main h5 {
   font-family: "Neucha", cursive;
   font-size: 0.8em;
 }
-
 .statrow {
   display: grid;
   grid-template-columns: 30% 40% 25%;
 }
-
 .statrow:nth-of-type(2n + 1) {
   background-color: rgb(39, 41, 39);
 }
@@ -351,6 +421,72 @@ main h5 {
   font-size: 2em;
 }
 
+.mass-edit {
+}
+
+table.mass-edit td * {
+  font-size: 0.7em;
+}
+
+.weekly-results {
+  display: flex;
+  flex-direction: column;
+  color: #8eb09b;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.weekly-results-title {
+  color: white;
+  font-family: "Passion One", cursive;
+  font-size: 1.25em;
+  padding-bottom: 5px;
+}
+
+.weekly-results-teams {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrt-1 {
+  background-color: #8eb09b;
+  color: black;
+  width: 160px;
+  padding: 5px 10px;
+  border-top: 1px solid black;
+  border-left: 10px solid red;
+}
+
+.wrt-1-nobordertop {
+  background-color: #8eb09b;
+  color: black;
+  width: 160px;
+  padding: 5px 10px;
+  border-left: 10px solid red;
+}
+
+.wrt-2 {
+  width: 100px;
+  padding: 5px 10px;
+  border-top: 1px solid #8eb09b;
+}
+
+.wrt-3 {
+  width: 100px;
+  padding: 5px;
+  border-top: 1px solid #8eb09b;
+  border-right: 10px solid red;
+}
+
+.borderbottom {
+  border-bottom: 1px solid #8eb09b;
+}
+
+.limecolor {
+  color: lime;
+}
+
 @media screen and (max-width: 1190px) {
   .team {
     width: 30%;
@@ -374,5 +510,21 @@ main h5 {
 
   .pagetitle h1 {
     font-size: 3em;
+  }
+
+  .lakedisplay {
+    font-size: 0.7em;
+  }
+
+  .lake-week {
+    margin-left: -20px;
+  }
+
+  .lake-name {
+    width: 50px;
+  }
+
+  .week-label {
+    display: none;
   }
 }
